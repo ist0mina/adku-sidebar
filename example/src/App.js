@@ -1,36 +1,33 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import AdkuSidebar from 'adku-sidebar';
 
-const SidebarContent = () => (
+const SidebarContent = ({ onClose }) => (
   <div className="container">
     <div className="d-flex flex-row">       
-      <button className="btn btn-primary">Закрыть</button>      
+      <button className="btn btn-primary" onClick={onClose}>Закрыть</button>      
     </div>
   </div>
 );
 
-export default class App extends Component {
-  state = { show: false };
+const App = () => {  
+  const [ show, setShow ] = useState(false);
 
-  onOpen = () => {
-    this.setState({ show: true });
-  }
+  const onOpen = () => setShow(true);
+  const onClose = () => setShow(false);      
 
-  render () {
-    const { show } = this.state;
-
-    return (
-      <div>
-        <AdkuSidebar className="border-right bg-secondary" show={show} sidebar={<SidebarContent/>}>
-          <div className="container">
-            <div className="row m-3"> 
-              <div className="col">
-                <button className="btn btn-primary" onClick={this.onOpen}>Показать</button>
-              </div>
+  return (
+    <div>
+      <AdkuSidebar className="border-right bg-secondary" show={show} sidebar={<SidebarContent onClose={onClose}/>}>
+        <div className="container">
+          <div className="row m-3"> 
+            <div className="col">
+              <button className="btn btn-primary" onClick={onOpen}>Показать</button>
             </div>
           </div>
-        </AdkuSidebar>
-      </div>
-    )
-  }
+        </div>
+      </AdkuSidebar>
+    </div>
+  )
 }
+
+export default App;

@@ -8,6 +8,8 @@
   overflow: hidden;
   max-width: 800px;
   min-width: 300px;
+  background-color: #fff;  
+  border-right: 1px solid #eee;
 }
 
 .tran{
