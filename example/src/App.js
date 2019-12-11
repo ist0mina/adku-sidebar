@@ -15,18 +15,16 @@ const App = () => {
   const onOpen = () => setShow(true);
   const onClose = () => setShow(false);      
 
-  return (
-    <div>
-      <AdkuSidebar className="border-right bg-secondary" show={show} sidebar={<SidebarContent onClose={onClose}/>}>
-        <div className="container">
-          <div className="row m-3"> 
-            <div className="col">
-              <button className="btn btn-primary" onClick={onOpen}>Показать</button>
-            </div>
+  return (    
+    <AdkuSidebar sidebarClassName="border-right bg-secondary" contentClassName="border" show={show} sidebar={<SidebarContent onClose={onClose}/>}>
+      <div className="container">
+        <div className="row m-3"> 
+          <div className="col">
+            <button className="btn btn-primary" onClick={onOpen}>Показать</button>
           </div>
         </div>
-      </AdkuSidebar>
-    </div>
+      </div>
+    </AdkuSidebar>    
   )
 }
 

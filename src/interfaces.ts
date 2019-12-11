@@ -1,7 +1,9 @@
 import * as React from 'react';
 
 export interface IAdkuSidebar {
-    className?: string;
+    wrapperClassName?: string;
+    sidebarClassName?: string;
+    contentClassName?: string;
     show?: boolean;
     children: React.ReactNode | React.ReactNode[],
     sidebar: React.ReactNode
