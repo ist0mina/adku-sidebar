@@ -5,6 +5,8 @@ export interface IAdkuSidebar {
     sidebarClassName?: string;
     contentClassName?: string;
     show?: boolean;
-    children: React.ReactNode | React.ReactNode[],
-    sidebar: React.ReactNode
+    over?: boolean;
+    children: React.ReactNode | React.ReactNode[];
+    sidebar: React.ReactNode;
+    wrapperHeight?: number;
 };
