@@ -38,7 +38,8 @@
   -webkit-transition: -webkit-transform .5s ease;
   transition: -webkit-transform .5s ease;
   transition: transform .5s ease;
-  transition: transform .5s ease,-webkit-transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;  
+  transition: all .5s ease, -webkit-transform .5s ease;  
 }
 
 .sidebar-hidden_vertical{
@@ -50,9 +51,13 @@
 }
 
 .sidebar-hidden-nearby{
-  display: none;
+  opacity: 0;    
 }
 
 .sidebar-main{
   width: 100%;
+}
+
+.sidebar-main-tran {
+  margin-left: -300px;  
 }

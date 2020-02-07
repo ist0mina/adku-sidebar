@@ -11,7 +11,7 @@ const SidebarContent = ({ onClose }) => (
 
 const App = () => {  
   const [ show, setShow ] = useState(false);
-  const [ over, setOver ] = useState(true);
+  const [ over, setOver ] = useState(false);
 
   const onOpen = () => setShow(true);
   const onClose = () => setShow(false);      

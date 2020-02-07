@@ -14,19 +14,22 @@ const AdkuSidebar: React.FC<IAdkuSidebar> = (props: IAdkuSidebar) =>  {
     };
   }  
   
-  const sbPositionStyle = over ? styles['sidebar-over'] : '';  
-  const sbVisibilityStyle = show ? '' :  `${styles['sidebar-hidden_vertical']} ${over ? '' : styles['sidebar-hidden-nearby']}`;
+  const sbPositionStyle = over ? styles['sidebar-over'] : '';    
+  const sbVisibilityStyle = show ? '' :  `${styles['sidebar-hidden_vertical']}`;
   const sbClassName = `${styles.sidebar} ${styles['sidebar-vertical']} ${sbPositionStyle} ${styles.tran} ${sidebarClassName} ${sbVisibilityStyle}`;
 
   const wrPositionStyle = over ? '' : styles['sidebar-nearby'];
   const wrClassName = `${styles['sidebar-wrapper']} ${wrapperClassName} ${wrPositionStyle}`;
+
+  const mPositionStyle = !over && !show ? styles['sidebar-main-tran'] : '';  
+  const mClassName = `${styles.tran} ${contentClassName} ${styles['sidebar-main']} ${mPositionStyle}`;
 
   return (
     <div className={wrClassName} style={wrapperStyle}>        
       <div className={sbClassName}>
         { sidebar }
       </div>
-      <div className={`${styles.tran} ${contentClassName} ${styles['sidebar-main']}`}>
+      <div className={mClassName}>
         { children }
       </div>
     </div>
@@ -35,4 +38,5 @@ const AdkuSidebar: React.FC<IAdkuSidebar> = (props: IAdkuSidebar) =>  {
 
 
 export * from './interfaces';
+
 export default AdkuSidebar;
